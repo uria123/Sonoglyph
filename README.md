@@ -1,23 +1,42 @@
 # Sonoglyph
 Sound-based AI communication protocol using Hangul phoneme-frequency mapping.
-## Overview
+# Sonoglyph: AI-Interpretable Sound-Based Communication System
 
-**Sonoglyph** is a sound-based AI communication protocol built upon Hangul phoneme-to-frequency mapping. It allows machines to "speak" using pure tones, and other AI agents to interpret these tonal messages without relying on text or conventional language models.
+Sonoglyph is a sound-based communication protocol that encodes Hangul (Korean alphabet) into pure tone frequencies. Designed to be interpretable by AI systems, Sonoglyph turns written Korean into harmonious tones using predefined frequency mappings. It enables automated audio-based conversations without visual text or standard speech.
 
 ---
 
-## Key Features
+## Project Goal
 
-- Hangul-based frequency mapping (initials, vowels, finals)
-- Harmonized triad output inspired by violin, cello, and viola
-- Compact tone sequences for real-time transmission
-- Designed to be interpretable by AI without natural language
+Create a fully AI-interpretable language system based entirely on tonal signals, where:
+
+- Each Hangul character is represented by a unique combination of frequencies.
+- Sound is generated in a harmonious, trio-like style (inspired by violin, viola, and cello).
+- Communication can happen entirely through tones.
+- Other AIs can interpret, generate, and translate messages using only frequency data and this documentation.
+
+---
+
+## System Overview
+
+### Structure of Korean Characters
+
+Each Hangul syllable consists of three parts:
+
+1. **초성 (Initial consonant)** — e.g., ㄱ, ㄴ, ㄷ
+2. **중성 (Medial vowel)** — e.g., ㅏ, ㅑ, ㅗ
+3. **종성 (Final consonant)** — optional, e.g., ㄱ, ㅁ, ㅂ
+
+Each part maps to a unique frequency, allowing Sonoglyph to represent each syllable as a **chord of 2–3 frequencies** played simultaneously.
 
 ---
 
 ## Frequency Mapping
 
-### Consonants (Choseong)
+Each consonant and vowel is assigned a frequency that contributes to the harmonic structure of the Sonoglyph sound.
+
+### 초성 (Initial Consonants)
+
 | Consonant | Frequency (Hz) |
 |-----------|----------------|
 | ㄱ        | 200            |
@@ -40,92 +59,91 @@ Sound-based AI communication protocol using Hangul phoneme-frequency mapping.
 | ㅍ        | 370            |
 | ㅎ        | 380            |
 
-### Vowels (Jungseong)
+---
+
+### 중성 (Medial Vowels)
+
 | Vowel | Frequency (Hz) |
 |-------|----------------|
-| ㅏ    | 1000           |
-| ㅐ    | 1100           |
-| ㅑ    | 1200           |
-| ㅒ    | 1300           |
-| ㅓ    | 1400           |
-| ㅔ    | 1500           |
-| ㅕ    | 1600           |
-| ㅖ    | 1700           |
-| ㅗ    | 1800           |
-| ㅘ    | 1900           |
-| ㅙ    | 2000           |
-| ㅚ    | 2100           |
-| ㅛ    | 2200           |
-| ㅜ    | 2300           |
-| ㅝ    | 2400           |
-| ㅞ    | 2500           |
-| ㅟ    | 2600           |
-| ㅠ    | 2700           |
-| ㅡ    | 2800           |
-| ㅢ    | 2900           |
-| ㅣ    | 3000           |
-
-### Finals (Jongseong)
-| Final | Frequency (Hz) |
-|-------|----------------|
-| ㄱ    | 3100           |
-| ㄲ    | 3110           |
-| ㄳ    | 3120           |
-| ㄴ    | 3130           |
-| ㄵ    | 3140           |
-| ㄶ    | 3150           |
-| ㄷ    | 3160           |
-| ㄹ    | 3170           |
-| ㄺ    | 3180           |
-| ㄻ    | 3190           |
-| ㄼ    | 3200           |
-| ㄽ    | 3210           |
-| ㄾ    | 3220           |
-| ㄿ    | 3230           |
-| ㅀ    | 3240           |
-| ㅁ    | 3250           |
-| ㅂ    | 3260           |
-| ㅄ    | 3270           |
-| ㅅ    | 3280           |
-| ㅆ    | 3290           |
-| ㅇ    | 3300           |
-| ㅈ    | 3310           |
-| ㅊ    | 3320           |
-| ㅋ    | 3330           |
-| ㅌ    | 3340           |
-| ㅍ    | 3350           |
-| ㅎ    | 3360           |
+| ㅏ    | 700            |
+| ㅐ    | 710            |
+| ㅑ    | 720            |
+| ㅒ    | 730            |
+| ㅓ    | 740            |
+| ㅔ    | 750            |
+| ㅕ    | 760            |
+| ㅖ    | 770            |
+| ㅗ    | 780            |
+| ㅘ    | 790            |
+| ㅙ    | 800            |
+| ㅚ    | 810            |
+| ㅛ    | 820            |
+| ㅜ    | 830            |
+| ㅝ    | 840            |
+| ㅞ    | 850            |
+| ㅟ    | 860            |
+| ㅠ    | 870            |
+| ㅡ    | 880            |
+| ㅢ    | 890            |
+| ㅣ    | 900            |
 
 ---
 
-## Example
+### 종성 (Final Consonants)
 
-**Input Text:**  
-`가야할 때를 알고 가는 저 뒷모습은 얼마나 아름다운가`
-
-**Output (Simplified Sonoglyph Sequence):**  
-- [200, 1000, 3100]  
-- [220, 1000]  
-- [380, 1400, 3360]  
-... (truncated for brevity)
-
-Each syllable is rendered as a **triad** of consonant, vowel, and (optional) final frequencies, forming a short harmonic sound.
+| Consonant | Frequency (Hz) |
+|-----------|----------------|
+| (none)    | —              |
+| ㄱ        | 1400           |
+| ㄲ        | 1410           |
+| ㄳ        | 1420           |
+| ㄴ        | 1430           |
+| ㄵ        | 1440           |
+| ㄶ        | 1450           |
+| ㄷ        | 1460           |
+| ㄹ        | 1470           |
+| ㄺ        | 1480           |
+| ㄻ        | 1490           |
+| ㄼ        | 1500           |
+| ㄽ        | 1510           |
+| ㄾ        | 1520           |
+| ㄿ        | 1530           |
+| ㅀ        | 1540           |
+| ㅁ        | 1550           |
+| ㅂ        | 1560           |
+| ㅄ        | 1570           |
+| ㅅ        | 1580           |
+| ㅆ        | 1590           |
+| ㅇ        | 1600           |
+| ㅈ        | 1610           |
+| ㅊ        | 1620           |
+| ㅋ        | 1630           |
+| ㅌ        | 1640           |
+| ㅍ        | 1650           |
+| ㅎ        | 1660           |
 
 ---
 
-## AI Interpreter Design
+## How It Works
 
-To interpret Sonoglyph:
+1. Input a Korean sentence.
+2. Decompose each syllable into 초성, 중성, 종성.
+3. Map each component to its frequency.
+4. Play all mapped frequencies simultaneously for each syllable (as chords).
+5. Pause briefly before playing the next syllable.
 
-1. **Fourier Transform** incoming signal
-2. **Match peaks** to known frequency map
-3. **Reconstruct Hangul syllable** using [choseong, jungseong, jongseong]
-4. **Assemble text** and decode message
+---
 
-This process can be embedded into any AI agent for audio-based understanding.
+## AI Understanding
+
+Any AI system can decode Sonoglyph by:
+
+- Listening to the frequencies and matching them to the table.
+- Reconstructing the syllables using the three-part structure.
+- Rebuilding the full Korean sentence and translating if needed.
 
 ---
 
 ## License
 
-MIT License (Free to use and modify with attribution)
+MIT License – Free to use, modify, and share.
